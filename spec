@@ -110,6 +110,8 @@ beginseg
     include "build/src/libultra/os/gethwintrroutine.o"
     include "build/src/libultra/os/setwatchlo.o"
     include "build/data/rsp_boot.text.o"
+    include "build/src/enhancements/gfx.o"
+    include "build/src/enhancements/dpad.o"
 #ifdef COMPILER_GCC
     include "build/src/gcc_fix/missing_gcc_functions.o"
 #endif

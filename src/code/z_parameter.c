@@ -3,6 +3,7 @@
 #include "assets/textures/parameter_static/parameter_static.h"
 #include "assets/textures/do_action_static/do_action_static.h"
 #include "assets/textures/icon_item_static/icon_item_static.h"
+#include "enhancements/dpad.h"
 
 typedef struct {
     /* 0x00 */ u8 sceneId;
@@ -3263,6 +3264,7 @@ void Interface_Draw(PlayState* play) {
         Gfx_SetupDL_39Overlay(play->state.gfxCtx);
 
         Interface_DrawItemButtons(play);
+        draw_dpad(play);
 
         gDPPipeSync(OVERLAY_DISP++);
         gDPSetPrimColor(OVERLAY_DISP++, 0, 0, 255, 255, 255, interfaceCtx->bAlpha);
@@ -4346,4 +4348,6 @@ void Interface_Update(PlayState* play) {
             gSaveContext.sunsSongState = SUNSSONG_SPECIAL;
         }
     }
+
+    handle_dpad(play);
 }
